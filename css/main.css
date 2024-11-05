@@ -41,10 +41,10 @@ img {
 	max-width: 100%; height: auto;
 	}
 ::selection {
- 	text-shadow: none; color: #000; background: #FFF9CD;
+ 	text-shadow: none; color: #000; background: #ec8f63;
 	}
 ::-moz-selection {
- 	text-shadow: none; color: #000; background: #FFF9CD;
+ 	text-shadow: none; color: #000; background: #ec8f63;
 	}
 /* Loader */
 html {
