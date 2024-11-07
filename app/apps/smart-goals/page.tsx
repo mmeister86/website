@@ -3,11 +3,23 @@ import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { ToastActionElement, ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose } from '@/components/ui/toast';
 
 const SmartGoals = () => {
   const [goal, setGoal] = useState('');
   const [smartGoals, setSmartGoals] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const showToast = (title: string, description: string, variant: "default" | "destructive" = "default") => {
+    const toast = {
+      title,
+      description,
+      variant,
+    };
+    // Hier könnte man eine Toast-Queue oder einen Toast-Provider verwenden, um den Toast anzuzeigen
+    // Für dieses Beispiel nehmen wir an, dass es eine globale Toast-Funktion gibt, die wir verwenden können
+    // z.B. `toast(toast)`
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,8 +57,14 @@ const SmartGoals = () => {
       const data = await response.json();
       const smartGoalResponse = data.choices[0].message.content;
       setSmartGoals(smartGoalResponse.split('\n').filter((goal: string) => goal.trim() !== ''));
+
+      // Erfolgreicher Toast
+      showToast("Success", "Your SMART goals have been generated successfully.", "default");
     } catch (error) {
       console.error('Error fetching SMART goals:', error);
+
+      // Fehlerhafter Toast
+      showToast("Error", "There was a mistake. Please try again later.", "destructive");
     } finally {
       setIsLoading(false);
     }
