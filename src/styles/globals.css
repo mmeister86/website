@@ -1,5 +1,5 @@
 @import '../app/fonts.css';
-@import '../css/fonts/fontello/css/fontello.css';
+@import '/fonts/fontello/css/fontello.css';
 
 /* Directly copy the contents from css/main.css */
 /* (The entire CSS from main.css goes here) */
