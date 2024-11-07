@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { AppSidebar } from "@/components/app-sidebar";
 
 const hkGrotesk = localFont({
   src: [
@@ -40,8 +41,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hkGrotesk.variable} antialiased`}>
-        {children}
+      <body className={`${hkGrotesk.variable} antialiased flex`}>
+        <AppSidebar />
+        <main className="flex-1 relative">
+          {children}
+        </main>
       </body>
     </html>
   );
