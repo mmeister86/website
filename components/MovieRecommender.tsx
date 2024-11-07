@@ -69,7 +69,7 @@ export default function MovieRecommender() {
           </SelectTrigger>
           <SelectContent>
             {genres.map((genre) => (
-              <SelectItem key={genre.id} value={genre.name}>
+              <SelectItem key={genre.id} value={genre.id.toString()}>
                 {genre.name}
               </SelectItem>
             ))}

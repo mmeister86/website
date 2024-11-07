@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const API_KEY = process.env.RAPIDAPI_KEY
-const API_HOST = 'movie-database-alternative.p.rapidapi.com'
+const API_KEY = process.env.TMDB_API_KEY
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
@@ -12,13 +11,15 @@ export async function GET(request: Request) {
   }
 
   try {
-    const response = await fetch(`https://${API_HOST}/?s=${genre}&r=json&page=1`, {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': API_KEY!,
-        'X-RapidAPI-Host': API_HOST
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}&language=de-DE`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
       }
-    })
+    )
 
     if (!response.ok) {
       throw new Error('API response was not ok')
@@ -26,9 +27,16 @@ export async function GET(request: Request) {
 
     const data = await response.json()
 
-    if (data.Search && data.Search.length > 0) {
-      const randomIndex = Math.floor(Math.random() * data.Search.length)
-      return NextResponse.json(data.Search[randomIndex])
+    if (data.results && data.results.length > 0) {
+      const randomIndex = Math.floor(Math.random() * data.results.length)
+      const movie = data.results[randomIndex]
+      
+      return NextResponse.json({
+        Title: movie.title,
+        Year: new Date(movie.release_date).getFullYear().toString(),
+        Type: 'movie',
+        Poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      })
     } else {
       return NextResponse.json({ error: 'No movies found for this genre' }, { status: 404 })
     }
