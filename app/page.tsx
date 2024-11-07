@@ -1,5 +1,5 @@
 
-import { ArrowRight, Camera, CodeSquare, HeartIcon, Twitter} from "lucide-react";
+import { ArrowRight, Camera, CodeSquare, HeartIcon, Twitter } from "lucide-react";
 import Image from "next/image";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import WordRotate from "@/components/ui/word-rotate";
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="space-y-4">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">
             Hi, i&apos;m Matthias.<br />
-            I build <WordRotate duration={3500} words={["tiny", "cute", "useful", "sexy"]} className="bg-orange-500 p-2 rounded-xl"/> apps <br/>for the web.
+            I build <WordRotate duration={3500} words={["tiny", "cute", "useful", "sexy"]} className="bg-[#ff9f43] p-2 rounded-xl"/> apps <br/>for the web.
           </h1>
           
           <div className="space-y-4 text-lg text-neutral-600 font-medium">
@@ -31,24 +31,24 @@ export default function Home() {
             </p>
             <p>
               I am sometimes 
-              <Twitter fill="lightblue " className="ml-1 inline-flex size-4 text-blue-600" /> <a href="https://twitter.com" className="underline hover:text-black transition-colors">tweeting</a>,   
+              <Twitter fill="lightblue " className="ml-1 inline-flex size-4 text-blue-600" /> <a href="https://x.com/matthias_codes" className="underline hover:text-black transition-colors">tweeting</a>,   
               taking <Camera fill="lightgrey" className="ml-1 inline-flex size-5" /> <a href="#" className="underline hover:text-black transition-colors">photos</a> and  
-              writing <CodeSquare className="ml-1 inline-flex size-4 text-orange-700"/> <a href="https://github.com" className="underline hover:bg-black hover:text-white transition-colors">code</a> which
+              writing <CodeSquare className="ml-1 inline-flex size-4 text-[#ff9f43]"/> <a href="https://github.com/mmeister86" className="underline hover:bg-black hover:text-white transition-colors">code</a> which
               i store on GitHub.
             </p>
             <p>All of this wouldn&apos;t be possible withhout incredible open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
           </div>
 
-          <div className="py-6 space-y-4 text-lg text-neutral-600 font-medium">
+          <div className="py-4 space-y-4 text-lg text-neutral-600 font-medium">
             <div className="flex items-center gap-2">
               <p>Check out my little projects using the <ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /></p>
               <SidebarTrigger className="inline-flex size-4 hover:bg-none"/>
             </div>
           </div>
 
-          <div className="pt-4 font-medium">
+          <div className="font-semibold">
             <p>Write me a mail, i love getting these <HeartIcon fill="red" className="inline-flex size-4 text-red-500" /></p> 
-            <a href="masilto:hi@matthias.lol" className="underline hover:text-black transition-colors">
+            <a href="mailto:hi@matthias.lol" className="underline hover:text-black transition-colors">
               hi@matthias.lol
             </a>
           </div>

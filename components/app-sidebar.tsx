@@ -1,4 +1,4 @@
-import { Home, User, Mail, Github, Settings2, ChevronRight } from "lucide-react"
+import { Home, Mail, Github, ChevronRight, FolderGit2, Goal } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -26,14 +26,9 @@ const menuItems = {
       url: "/",
     },
     {
-      title: "About",
-      icon: User,
-      url: "/about",
-    },
-    {
       title: "Contact",
       icon: Mail,
-      url: "/contact",
+      url: "mailto:hi@matthias.lol",
     },
     {
       title: "GitHub",
@@ -41,26 +36,15 @@ const menuItems = {
       url: "https://github.com/matthias-codes",
     },
     {
-      title: "Settings",
+      title: "Projects",
       url: "#",
-      icon: Settings2,
+      icon: FolderGit2,
       items: [
         {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
+          title: "SMART Goals",
+          url: "/apps/smart-goals",
+          icons: Goal
+        }
       ],
     },
   ]
