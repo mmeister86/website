@@ -1,3 +1,4 @@
+import { HeartIcon} from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,12 +14,12 @@ export default function Home() {
         />
         
         <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-medium leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             Hi, i&apos;m Matthias.<br />
             I build apps for the web.
           </h1>
           
-          <div className="space-y-4 text-lg text-neutral-600">
+          <div className="space-y-4 text-lg text-neutral-600 font-medium">
             <p>
               Building simple and beautiful things for complex interfaces is what I enjoy most about my work.
             </p>
@@ -28,12 +29,12 @@ export default function Home() {
             <p>
               I am sometimes <a href="https://twitter.com" className="underline hover:text-black transition-colors">tweeting</a>, 
               taking <a href="#" className="underline hover:text-black transition-colors">photos</a> and 
-              writing <a href="https://github.com" className="underline hover:text-black transition-colors">code</a> which i store on GitHub.
+              writing <a href="https://github.com" className="underline hover:bg-black hover:text-white transition-colors">code</a> which i store on GitHub.
             </p>
           </div>
 
           <div className="pt-4">
-            <p>Write me a mail, i love getting these &lt;3</p>
+            <p>Write me a mail, i love getting these <HeartIcon className="inline-flex size-4 text-red-500" /></p> 
             <a href="mailto:hi@matthias.lol" className="underline hover:text-black transition-colors">
               hi@matthias.lol
             </a>
