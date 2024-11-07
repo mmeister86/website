@@ -11,8 +11,9 @@ export async function GET(request: Request) {
   }
 
   try {
+    const today = new Date().toISOString().split('T')[0];
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}&language=de-DE`,
+      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}&language=en-US&primary_release_date.lte=${today}&primary_release_date.gte=1970-01-01`,
       {
         method: 'GET',
         headers: {
