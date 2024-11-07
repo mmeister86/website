@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { cn } from '@/lib/utils';
 
 const SmartGoals = () => {
   const [goal, setGoal] = useState('');
@@ -129,7 +128,6 @@ const SmartGoals = () => {
           )}
           </div>
         </div>
-      </div>
     </main>
   );
 }
