@@ -37,6 +37,7 @@ export function AppSidebar() {
   return (
     <Sidebar 
       collapsible="offcanvas" 
+      variant="inset"
       className="z-50"
       title={undefined}
     >
