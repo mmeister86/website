@@ -35,7 +35,7 @@ const menuItems = [
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="overlay" className="z-50">
+    <Sidebar collapsible="offcanvas" className="z-50">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Navigation</SidebarGroupLabel>
