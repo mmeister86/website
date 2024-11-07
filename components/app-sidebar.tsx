@@ -11,8 +11,7 @@ import {
 } from "@/components/ui/sidebar"
 
 const menuItems = [
-  navMain:[
-    {
+  {
     title: "Home",
     icon: Home,
     url: "/",
@@ -55,7 +54,7 @@ const menuItems = [
       },
     ],
   },
-]]
+]
 
 export function AppSidebar({ variant = "inset" }: { variant?: "sidebar" | "floating" | "inset" }) {
   return (
