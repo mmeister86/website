@@ -4,15 +4,7 @@ import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { 
-  ToastActionElement, 
-  ToastProvider, 
-  ToastViewport, 
-  Toast,
-  ToastTitle, 
-  ToastDescription, 
-  ToastClose 
-} from '@/components/ui/toast';
+import { ToastProvider, ToastViewport } from '@/components/ui/toast';
 import { useToast } from '@/hooks/use-toast';
 
 const SmartGoals = () => {
@@ -21,11 +13,9 @@ const SmartGoals = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const showToast = (
-    title: string, 
-    description: string, 
-    variant: "default" | "destructive" = "default"
-  ) => {
+  const { toast } = useToast();
+
+  const showToast = (title: string, description: string, variant: "default" | "destructive" = "default") => {
     toast({
       title,
       description,
@@ -100,7 +90,8 @@ const SmartGoals = () => {
 
   return (
     <ToastProvider>
-      <main className="min-h-screen flex items-center justify-center p-6 md:p-24 max-w-5xl mx-auto">
+      <ToastProvider>
+        <main className="min-h-screen flex items-center justify-center p-6 md:p-24 max-w-5xl mx-auto">
         <div className="flex flex-col gap-12 w-full">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">
@@ -179,7 +170,9 @@ const SmartGoals = () => {
             )}
           </div>
         </div>
-      </main>
+        </main>
+        <ToastViewport />
+      </ToastProvider>
       <ToastViewport />
     </ToastProvider>
   );
