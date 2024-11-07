@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import Image from 'next/image'
 
 // Liste der verfügbaren Film-Genres mit IDs und Namen
 const genres = [
@@ -99,7 +100,7 @@ export default function MovieRecommender() {
       <CardContent>
         {error && <p className="text-red-500">{error}</p>}
         {!movie && !error && !loading && (
-          <p className="text-muted-foreground">Select a genre and click "Get Recommendation" to find a movie</p>
+          <p className="text-muted-foreground">Select a genre and click &quot;Get Recommendation&quot; to find a movie</p>
         )}
         {loading && <p>Loading...</p>}
         {movie && (
