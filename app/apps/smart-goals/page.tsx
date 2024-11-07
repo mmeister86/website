@@ -23,7 +23,7 @@ const SmartGoals = () => {
           'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: 'mistral-tiny',
+          model: 'mistral-large-2407',
           messages: [
             {
               role: 'user', 
