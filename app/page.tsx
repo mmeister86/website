@@ -1,5 +1,5 @@
 
-import { Camera, CodeSquare, HeartIcon, Twitter} from "lucide-react";
+import { ArrowRight, Camera, CodeSquare, HeartIcon, Twitter} from "lucide-react";
 import Image from "next/image";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
@@ -39,8 +39,8 @@ export default function Home() {
 
           <div className="py-6 space-y-4 text-lg text-neutral-600 font-medium">
             <div className="flex items-center gap-2">
-              <p>Check out my little projects</p>
-              <SidebarTrigger />
+              <p>Check out my little projects using the <ArrowRight className="inline-flex size-4" /></p>
+              <SidebarTrigger className="inline-flex size-4"/>
             </div>
           </div>
 
