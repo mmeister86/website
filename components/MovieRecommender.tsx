@@ -109,9 +109,11 @@ export default function MovieRecommender() {
               {/* Poster Spalte */}
               {movie.Poster && movie.Poster !== 'N/A' && (
                 <div className="w-full md:w-[300px] flex-shrink-0">
-                  <img 
+                  <Image 
                     src={movie.Poster} 
                     alt={movie.Title}
+                    width={300}
+                    height={450}
                     className="w-full rounded-md shadow-md"
                   />
                 </div>
