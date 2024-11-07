@@ -20,6 +20,8 @@ interface Movie {
   Title: string;
   Year: string;
   Type: string;
+  Poster: string;  // Für das Filmposter
+  id?: number;     // Für den TMDB Link
 }
 
 export default function MovieRecommender() {
@@ -57,7 +59,7 @@ export default function MovieRecommender() {
   }
 
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] max-w-[90vw]">
       <CardHeader>
         <CardTitle>Movie Recommender</CardTitle>
         <CardDescription>Select a genre to get a movie recommendation</CardDescription>
@@ -79,13 +81,32 @@ export default function MovieRecommender() {
           {loading ? 'Loading...' : 'Get Recommendation'}
         </Button>
       </CardContent>
-      <CardFooter className="flex flex-col items-start">
+      <CardFooter className="flex flex-col items-start w-full">
         {error && <p className="text-red-500">{error}</p>}
         {movie && (
-          <div>
+          <div className="w-full">
             <h3 className="font-bold">{movie.Title}</h3>
             <p>Year: {movie.Year}</p>
             <p>Type: {movie.Type}</p>
+            {movie.Poster && movie.Poster !== 'N/A' && (
+              <div className="mt-4">
+                <img 
+                  src={movie.Poster} 
+                  alt={movie.Title}
+                  className="w-full rounded-md shadow-md"
+                />
+              </div>
+            )}
+            {movie.id && (
+              <a
+                href={`https://www.themoviedb.org/movie/${movie.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-blue-500 hover:text-blue-700 underline"
+              >
+                View on TMDB
+              </a>
+            )}
           </div>
         )}
       </CardFooter>
