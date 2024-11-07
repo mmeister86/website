@@ -88,8 +88,7 @@ const SmartGoals = () => {
 
   return (
     <ToastProvider>
-      <ToastProvider>
-        <main className="min-h-screen flex items-center justify-center p-6 md:p-24 max-w-5xl mx-auto">
+      <main className="min-h-screen flex items-center justify-center p-6 md:p-24 max-w-5xl mx-auto">
         <div className="flex flex-col gap-12 w-full">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">
@@ -168,9 +167,7 @@ const SmartGoals = () => {
             )}
           </div>
         </div>
-        </main>
-        <ToastViewport />
-      </ToastProvider>
+      </main>
       <ToastViewport />
     </ToastProvider>
   );
