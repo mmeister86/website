@@ -45,7 +45,7 @@ export default function RootLayout({
       <body className={`${hkGrotesk.variable} antialiased flex`}>
         <SidebarProvider>
           <AppSidebar />
-          <main className="flex-1 relative">
+          <main className="flex-1 relative z-0">
             {children}
           </main>
         </SidebarProvider>
