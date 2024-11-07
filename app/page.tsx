@@ -1,6 +1,7 @@
 
 import { Camera, CodeSquare, HeartIcon, Twitter} from "lucide-react";
 import Image from "next/image";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function Home() {
   return (
@@ -37,7 +38,10 @@ export default function Home() {
           </div>
 
           <div className="py-6 space-y-4 text-lg text-neutral-600 font-medium">
-            <p>Check out my little projects using the sidebar</p>
+            <div className="flex items-center gap-2">
+              <p>Check out my little projects</p>
+              <SidebarTrigger />
+            </div>
           </div>
 
           <div className="pt-4 font-medium">
