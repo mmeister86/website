@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -46,6 +46,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${hkGrotesk.variable} antialiased flex overflow-hidden`}>
         <SidebarProvider defaultOpen={false}>
+          <SidebarTrigger className="absolute top-4 left-4 z-50" />
           <AppSidebar variant="inset" />
           <SidebarInset>
             {children}
