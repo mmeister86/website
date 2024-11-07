@@ -36,7 +36,7 @@ export default function Home() {
               writing <CodeSquare className="ml-1 inline-flex size-4 text-orange-700"/> <a href="https://github.com" className="underline hover:bg-black hover:text-white transition-colors">code</a> which
               i store on GitHub.
             </p>
-            <p>All of this wouldn't be possible withhout incredible open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
+            <p>All of this wouldn&apos;t be possible withhout incredible open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
           </div>
 
           <div className="py-6 space-y-4 text-lg text-neutral-600 font-medium">

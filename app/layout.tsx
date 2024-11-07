@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const hkGrotesk = localFont({
   src: [
@@ -49,7 +51,9 @@ export default function RootLayout({
             {children}
           </SidebarInset>
         </SidebarProvider>
-      </body>
+        <Analytics />
+        <SpeedInsights />
+        </body>
     </html>
   );
 }
