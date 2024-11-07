@@ -12,8 +12,9 @@ export async function GET(request: Request) {
 
   try {
     const today = new Date().toISOString().split('T')[0];
+    const randomPage = Math.floor(Math.random() * 5) + 1; // Random page between 1 and 5
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}&language=en-US&primary_release_date.lte=${today}&primary_release_date.gte=1970-01-01`,
+      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}&language=en-US&primary_release_date.lte=${today}&primary_release_date.gte=1970-01-01&sort_by=random.random&vote_count.gte=100&page=${randomPage}`,
       {
         method: 'GET',
         headers: {
