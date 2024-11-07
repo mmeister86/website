@@ -1,3 +1,4 @@
+"use client"
 
 import { ArrowRight, Camera, CodeSquare, HeartIcon, Twitter } from "lucide-react";
 import Image from "next/image";
@@ -5,6 +6,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import WordRotate from "@/components/ui/word-rotate";
 
 export default function Home() {
+
   return (
     <main className="min-h-screen flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto">
       <div className="flex flex-col gap-12">
@@ -13,7 +15,7 @@ export default function Home() {
           alt="Portrait"
           width={128}
           height={128}
-          className="rounded-full"
+          className="rounded-full cursor-pointer"
         />
         
         <div className="space-y-4">

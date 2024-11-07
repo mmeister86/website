@@ -6,6 +6,7 @@ import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/s
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ArrowLeft } from "lucide-react";
+import { Toaster } from "@/components/ui/toaster";
 
 const hkGrotesk = localFont({
   src: [
@@ -53,9 +54,10 @@ export default function RootLayout({
             {children}
           </SidebarInset>
         </SidebarProvider>
+        <Toaster />
         <Analytics />
         <SpeedInsights />
-        </body>
+      </body>
     </html>
   );
 }
