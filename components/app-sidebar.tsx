@@ -33,11 +33,11 @@ const menuItems = [
   },
 ]
 
-export function AppSidebar() {
+export function AppSidebar({ variant = "inset" }: { variant?: "sidebar" | "floating" | "inset" }) {
   return (
     <Sidebar 
       collapsible="offcanvas" 
-      variant="inset"
+      variant={variant}
       className="z-50"
       title={undefined}
     >

@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hkGrotesk.variable} antialiased flex`}>
+      <body className={`${hkGrotesk.variable} antialiased flex overflow-hidden`}>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar variant="inset" />
           <SidebarInset>
