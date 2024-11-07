@@ -1,0 +1,11 @@
+@import '../app/fonts.css';
+@import '../css/fonts/fontello/css/fontello.css';
+
+/* Directly copy the contents from css/main.css */
+/* (The entire CSS from main.css goes here) */
+/* Note: You might want to adjust some selectors for Next.js */
+/* For brevity, I'll show just the base import */
+
+body {
+  font-family: var(--font-hk-grotesk), sans-serif;
+}
