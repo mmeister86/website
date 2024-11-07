@@ -36,7 +36,8 @@ export async function GET(request: Request) {
         Year: new Date(movie.release_date).getFullYear().toString(),
         Type: 'movie',
         Poster: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
-        id: movie.id  // Füge die Movie-ID hinzu
+        id: movie.id,
+        Synopsis: movie.overview
       })
     } else {
       return NextResponse.json({ error: 'No movies found for this genre' }, { status: 404 })

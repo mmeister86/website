@@ -22,6 +22,7 @@ interface Movie {
   Type: string;
   Poster: string;  // Für das Filmposter
   id?: number;     // Für den TMDB Link
+  Synopsis?: string;  // Neue Zeile für die Synopsis
 }
 
 export default function MovieRecommender() {
@@ -129,6 +130,14 @@ export default function MovieRecommender() {
                     >
                       View on TMDB
                     </a>
+                  )}
+                  {movie.Synopsis && (
+                    <div className="mt-4">
+                      <h4 className="font-semibold mb-2">Synopsis:</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {movie.Synopsis}
+                      </p>
+                    </div>
                   )}
                 </div>
               </div>
