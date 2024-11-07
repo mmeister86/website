@@ -33,7 +33,7 @@ const menuItems = {
     {
       title: "GitHub",
       icon: Github,
-      url: "https://github.com/matthias-codes",
+      url: "https://github.com/mmeister86r",
     },
     {
       title: "Projects",
@@ -43,6 +43,11 @@ const menuItems = {
         {
           title: "SMART Goals",
           url: "/apps/smart-goals",
+          icons: Goal
+        },
+        {
+          title: "Movie recommendations",
+          url: "/apps/movie-recommendations",
           icons: Goal
         }
       ],

@@ -21,7 +21,7 @@ export default function Home() {
         <div className="space-y-4">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">
             Hi, i&apos;m Matthias.<br />
-            I build <WordRotate duration={3500} words={["tiny", "cute", "useful", "sexy"]} className="bg-[#ff9f43] p-2 rounded-xl"/> apps <br/>for the web.
+            I build <WordRotate duration={3500} words={["tiny", "cool", "funny", "cute", "useful", "sexy"]} className="bg-[#ff9f43] p-2 rounded-xl"/> apps <br/>for the web.
           </h1>
           
           <div className="space-y-4 text-lg text-neutral-600 font-medium">
@@ -34,11 +34,11 @@ export default function Home() {
             <p>
               I am sometimes 
               <Twitter fill="lightblue " className="ml-1 inline-flex size-4 text-blue-600" /> <a href="https://x.com/matthias_codes" className="underline hover:text-black transition-colors">tweeting</a>,   
-              taking <Camera fill="lightgrey" className="ml-1 inline-flex size-5" /> <a href="#" className="underline hover:text-black transition-colors">photos</a> and  
+              taking <Camera fill="lightgrey" className="ml-1 inline-flex size-5" /> <a href="https://instagram.com/dermeisterfotograf" className="underline hover:text-black transition-colors">photos</a> and  
               writing <CodeSquare className="ml-1 inline-flex size-4 text-[#ff9f43]"/> <a href="https://github.com/mmeister86" className="underline hover:bg-black hover:text-white transition-colors">code</a> which
               i store on GitHub.
             </p>
-            <p>All of this wouldn&apos;t be possible withhout incredible open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
+            <p>All of this wouldn&apos;t be possible withhout incredible (often times) open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
           </div>
 
           <div className="py-4 space-y-4 text-lg text-neutral-600 font-medium">
