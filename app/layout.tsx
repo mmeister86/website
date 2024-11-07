@@ -46,7 +46,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${hkGrotesk.variable} antialiased flex overflow-hidden`}>
         <SidebarProvider defaultOpen={false}>
-          <SidebarTrigger className="absolute top-4 left-4 z-50" />
+          <SidebarTrigger className="absolute top-4 left-4 z-40" />
           <AppSidebar variant="inset" />
           <SidebarInset>
             {children}
