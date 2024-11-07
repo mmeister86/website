@@ -2,6 +2,7 @@
 import { ArrowRight, Camera, CodeSquare, HeartIcon, Twitter} from "lucide-react";
 import Image from "next/image";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import WordRotate from "@/components/ui/word-rotate";
 
 export default function Home() {
   return (
@@ -16,9 +17,9 @@ export default function Home() {
         />
         
         <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">
             Hi, i&apos;m Matthias.<br />
-            I build apps for the web.
+            I build <WordRotate duration={3500} words={["tiny", "cute", "useful", "sexy"]} className="bg-orange-500 p-2 rounded-xl"/> apps <br/>for the web.
           </h1>
           
           <div className="space-y-4 text-lg text-neutral-600 font-medium">
@@ -35,12 +36,13 @@ export default function Home() {
               writing <CodeSquare className="ml-1 inline-flex size-4 text-orange-700"/> <a href="https://github.com" className="underline hover:bg-black hover:text-white transition-colors">code</a> which
               i store on GitHub.
             </p>
+            <p>All of this wouldn't be possible withhout incredible open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
           </div>
 
           <div className="py-6 space-y-4 text-lg text-neutral-600 font-medium">
             <div className="flex items-center gap-2">
-              <p>Check out my little projects using the <ArrowRight className="inline-flex size-4" /></p>
-              <SidebarTrigger className="inline-flex size-4"/>
+              <p>Check out my little projects using the <ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /></p>
+              <SidebarTrigger className="inline-flex size-4 hover:bg-none"/>
             </div>
           </div>
 
