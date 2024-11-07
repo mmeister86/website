@@ -59,7 +59,9 @@ export default function MovieRecommender() {
   }
 
   return (
-    <Card className="w-[350px] max-w-[90vw]">
+  <div className="flex flex-col md:flex-row gap-6 w-full max-w-[1200px]">
+    {/* Linke Spalte - Suchmaske */}
+    <Card className="w-full md:w-[350px]">
       <CardHeader>
         <CardTitle>Movie Recommender</CardTitle>
         <CardDescription>Select a genre to get a movie recommendation</CardDescription>
@@ -77,39 +79,64 @@ export default function MovieRecommender() {
             ))}
           </SelectContent>
         </Select>
-        <Button className="w-full mt-4" onClick={fetchMovie} disabled={!selectedGenre || loading}>
+        <Button 
+          className="w-full mt-4" 
+          onClick={fetchMovie} 
+          disabled={!selectedGenre || loading}
+        >
           {loading ? 'Loading...' : 'Get Recommendation'}
         </Button>
       </CardContent>
-      <CardFooter className="flex flex-col items-start w-full">
+    </Card>
+
+    {/* Rechte Spalte - Ergebnisse */}
+    <Card className="w-full md:flex-1">
+      <CardHeader>
+        <CardTitle>Movie Details</CardTitle>
+        <CardDescription>Your movie recommendation will appear here</CardDescription>
+      </CardHeader>
+      <CardContent>
         {error && <p className="text-red-500">{error}</p>}
+        {!movie && !error && !loading && (
+          <p className="text-muted-foreground">Select a genre and click "Get Recommendation" to find a movie</p>
+        )}
+        {loading && <p>Loading...</p>}
         {movie && (
           <div className="w-full">
-            <h3 className="font-bold">{movie.Title}</h3>
-            <p>Year: {movie.Year}</p>
-            <p>Type: {movie.Type}</p>
-            {movie.Poster && movie.Poster !== 'N/A' && (
-              <div className="mt-4">
-                <img 
-                  src={movie.Poster} 
-                  alt={movie.Title}
-                  className="w-full rounded-md shadow-md"
-                />
+            <div className="flex flex-col md:flex-row gap-6">
+              {/* Poster Spalte */}
+              {movie.Poster && movie.Poster !== 'N/A' && (
+                <div className="w-full md:w-[300px] flex-shrink-0">
+                  <img 
+                    src={movie.Poster} 
+                    alt={movie.Title}
+                    className="w-full rounded-md shadow-md"
+                  />
+                </div>
+              )}
+              {/* Details Spalte */}
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-4">{movie.Title}</h3>
+                <div className="space-y-2">
+                  <p><span className="font-semibold">Year:</span> {movie.Year}</p>
+                  <p><span className="font-semibold">Type:</span> {movie.Type}</p>
+                  {movie.id && (
+                    <a
+                      href={`https://www.themoviedb.org/movie/${movie.id}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-4 text-blue-500 hover:text-blue-700 underline"
+                    >
+                      View on TMDB
+                    </a>
+                  )}
+                </div>
               </div>
-            )}
-            {movie.id && (
-              <a
-                href={`https://www.themoviedb.org/movie/${movie.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block text-blue-500 hover:text-blue-700 underline"
-              >
-                View on TMDB
-              </a>
-            )}
+            </div>
           </div>
         )}
-      </CardFooter>
+      </CardContent>
     </Card>
+  </div>
   )
 }
