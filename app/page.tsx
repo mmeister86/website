@@ -1,4 +1,5 @@
-import { HeartIcon} from "lucide-react";
+
+import { Camera, CodeSquare, HeartIcon, Twitter} from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -27,15 +28,21 @@ export default function Home() {
               I am also interested in crafting beautiful minimal products and exploring new worlds.
             </p>
             <p>
-              I am sometimes <a href="https://twitter.com" className="underline hover:text-black transition-colors">tweeting</a>, 
-              taking <a href="#" className="underline hover:text-black transition-colors">photos</a> and 
-              writing <a href="https://github.com" className="underline hover:bg-black hover:text-white transition-colors">code</a> which i store on GitHub.
+              I am sometimes 
+              <Twitter fill="lightblue " className="ml-1 inline-flex size-4 text-blue-600" /> <a href="https://twitter.com" className="underline hover:text-black transition-colors">tweeting</a>,   
+              taking <Camera fill="lightgrey" className="ml-1 inline-flex size-5" /> <a href="#" className="underline hover:text-black transition-colors">photos</a> and  
+              writing <CodeSquare className="ml-1 inline-flex size-4 text-orange-700"/> <a href="https://github.com" className="underline hover:bg-black hover:text-white transition-colors">code</a> which
+              i store on GitHub.
             </p>
           </div>
 
-          <div className="pt-4">
-            <p>Write me a mail, i love getting these <HeartIcon className="inline-flex size-4 text-red-500" /></p> 
-            <a href="mailto:hi@matthias.lol" className="underline hover:text-black transition-colors">
+          <div className="py-6 space-y-4 text-lg text-neutral-600 font-medium">
+            <p>Check out my little projects using the sidebar</p>
+          </div>
+
+          <div className="pt-4 font-medium">
+            <p>Write me a mail, i love getting these <HeartIcon fill="red" className="inline-flex size-4 text-red-500" /></p> 
+            <a href="masilto:hi@matthias.lol" className="underline hover:text-black transition-colors">
               hi@matthias.lol
             </a>
           </div>
