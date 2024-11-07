@@ -1,25 +1,35 @@
-import type { Metadata } from 'next'
-import { HK_Grotesk } from './fonts'
-import '../styles/globals.css'
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
+
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
-  title: 'Matthias - sort of Webdeveloper',
-  description: 'matthias\' portfolio',
-  authors: [{ name: 'matthias' }],
-  icons: {
-    shortcut: '/images/ico/favicon.ico',
-    apple: '/images/ico/apple-touch-icon.png'
-  }
-}
+  title: "matthias.lol",
+  description: "Portfolio | sort of a Webdeveloper",
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="de" className={HK_Grotesk.variable}>
-      <body>{children}</body>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
-  )
+  );
 }

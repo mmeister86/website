@@ -1,60 +1,45 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="content-wrap">
-      <div className="content">
-        <Image
-          className="profile-image rounded"
-          src="/images/matthias.jpg"
-          alt="so sieht matthias aus. manchmal."
-          width={200}
-          height={200}
+    <main className="min-h-screen flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto">
+      <div className="flex flex-col gap-12">
+        <Image 
+          src="/matthias.jpg"
+          alt="Portrait"
+          width={128}
+          height={128}
+          className="rounded-full"
         />
+        
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-7xl font-medium leading-tight">
+            Hi, i&apos;m Matthias.<br />
+            I build apps for the web.
+          </h1>
+          
+          <div className="space-y-4 text-lg text-neutral-600">
+            <p>
+              Building simple and beautiful things for complex interfaces is what I enjoy most about my work.
+            </p>
+            <p>
+              I am also interested in crafting beautiful minimal products and exploring new worlds.
+            </p>
+            <p>
+              I am sometimes <a href="https://twitter.com" className="underline hover:text-black transition-colors">tweeting</a>, 
+              taking <a href="#" className="underline hover:text-black transition-colors">photos</a> and 
+              writing <a href="https://github.com" className="underline hover:text-black transition-colors">code</a> which i store on GitHub.
+            </p>
+          </div>
 
-        <h1>
-          Hi, i&apos;m Matthias.
-          <br />I build apps for the web.
-        </h1>
-
-        <p>
-          Building simple and beautiful things for complex interfaces is what I
-          enjoy most about my work. <br/>
-          I am also interested in crafting beautiful minimal products and exploring new worlds.
-        </p>
-
-        <p>
-          I am sometimes
-          <Link
-            className="link-1"
-            href="https://twitter.com/matthiascodes"
-            target="_blank"
-          >
-            tweeting
-          </Link>, taking
-          <Link
-            className="link-1"
-            href="https://www.instagram.com/dermeisterfotograf/"
-            target="_blank"
-          >
-            photos
-          </Link>
-          and writing
-          <Link 
-            className="link-1" 
-            href="https://github.com/mmeister86/" 
-            target="_blank"
-          >
-            code
-          </Link> which i store on GitHub.
-        </p>
-
-        <p>
-          Write me a mail, i love getting these &lt;3 <br />
-          <Link className="link-2" href="mailto:hi@matthias.lol">hi@matthias.lol</Link>
-        </p>
+          <div className="pt-4">
+            <p>Write me a mail, i love getting these &lt;3</p>
+            <a href="mailto:hi@matthias.lol" className="underline hover:text-black transition-colors">
+              hi@matthias.lol
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
