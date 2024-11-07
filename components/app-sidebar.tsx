@@ -1,4 +1,4 @@
-import { Home, User, Mail, Github } from "lucide-react"
+import { Home, User, Mail, Github,  Settings2 } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -11,7 +11,8 @@ import {
 } from "@/components/ui/sidebar"
 
 const menuItems = [
-  {
+  navMain:[
+    {
     title: "Home",
     icon: Home,
     url: "/",
@@ -31,7 +32,30 @@ const menuItems = [
     icon: Github,
     url: "https://github.com/matthias-codes",
   },
-]
+  {
+    title: "Settings",
+    url: "#",
+    icon: Settings2,
+    items: [
+      {
+        title: "General",
+        url: "#",
+      },
+      {
+        title: "Team",
+        url: "#",
+      },
+      {
+        title: "Billing",
+        url: "#",
+      },
+      {
+        title: "Limits",
+        url: "#",
+      },
+    ],
+  },
+]]
 
 export function AppSidebar({ variant = "inset" }: { variant?: "sidebar" | "floating" | "inset" }) {
   return (
@@ -43,11 +67,11 @@ export function AppSidebar({ variant = "inset" }: { variant?: "sidebar" | "float
     >
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+          <SidebarGroupLabel><h2 className="font-bold text-xl py-6">Navigation</h2></SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="pt-10" >
               {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.title} >
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
                       <item.icon className="h-4 w-4" />
