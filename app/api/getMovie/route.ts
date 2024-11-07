@@ -5,6 +5,7 @@ const API_KEY = process.env.TMDB_API_KEY
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const genre = searchParams.get('genre')
+  const page = searchParams.get('page') || '1' // Hole die Seite aus den Parametern
 
   if (!genre) {
     return NextResponse.json({ error: 'Genre is required' }, { status: 400 })
@@ -12,9 +13,8 @@ export async function GET(request: Request) {
 
   try {
     const today = new Date().toISOString().split('T')[0];
-    const randomPage = Math.floor(Math.random() * 5) + 1; // Random page between 1 and 5
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}&language=en-US&primary_release_date.lte=${today}&primary_release_date.gte=1970-01-01&sort_by=random.random&vote_count.gte=100&page=${randomPage}`,
+      `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genre}&language=en-US&primary_release_date.lte=${today}&primary_release_date.gte=1970-01-01&sort_by=random.random&vote_count.gte=100&page=${page}`,
       {
         method: 'GET',
         headers: {

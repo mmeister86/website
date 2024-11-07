@@ -40,7 +40,8 @@ export default function MovieRecommender() {
     setMovie(null)
 
     try {
-      const response = await fetch(`/api/getMovie?genre=${selectedGenre}`)
+      const randomPage = Math.floor(Math.random() * 5) + 1; // Generiere die Zufallsseite hier
+      const response = await fetch(`/api/getMovie?genre=${selectedGenre}&page=${randomPage}`)
 
       if (!response.ok) {
         throw new Error('Network response was not ok')
