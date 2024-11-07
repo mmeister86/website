@@ -13,8 +13,6 @@ const SmartGoals = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const { toast } = useToast();
-
   const showToast = (title: string, description: string, variant: "default" | "destructive" = "default") => {
     toast({
       title,
