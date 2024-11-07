@@ -5,6 +5,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ArrowLeft } from "lucide-react";
 
 const hkGrotesk = localFont({
   src: [
@@ -44,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hkGrotesk.variable} antialiased flex overflow-hidden`}>
+      <body className={`${hkGrotesk.variable} antialiased flex overflow-auto`}>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar variant="inset" />
           <SidebarInset>
