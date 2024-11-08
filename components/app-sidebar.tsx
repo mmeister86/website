@@ -47,6 +47,10 @@ const menuItems = {
         {
           title: "Movie recommendations",
           url: "/apps/movie-recommendations"
+        },
+        {
+          title: "Recipes",
+          url: "/apps/recipes"
         }
       ],
     },

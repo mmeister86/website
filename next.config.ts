@@ -8,6 +8,11 @@ const config: NextConfig = {
         hostname: 'image.tmdb.org',
         pathname: '/t/p/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'img.spoonacular.com',
+        pathname: '/recipes/**',
+      },
     ],
   },
 };
