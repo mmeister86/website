@@ -134,14 +134,14 @@ const Recipes = () => {
           </>
         )}
 
-        {/* Back to overview link */}
+        {/* Back to overview link 
         <div className="text-center mt-8">
           <Link href="/apps/recipes">
             <a className="text-[#8B9D5A] hover:text-[#7A8B4B] font-semibold text-lg">
               Zurück zur Übersicht
             </a>
           </Link>
-        </div>
+        </div>*/}
 
         {/* Initial state when no recipes have been searched */}
         {!isLoading && recipes.length === 0 && (
