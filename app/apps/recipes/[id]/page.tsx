@@ -1,5 +1,6 @@
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';                                                                                           
  import Image from 'next/image';                                                                                                                                            
+import Link from 'next/link';
                                                                                                                                                                             
  interface RecipeDetails {                                                                                                                                                  
    title: string;                                                                                                                                                           
@@ -46,7 +47,16 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
      }                                                                                                                                                                      
                                                                                                                                                                             
      return (                                                                                                                                                               
-       <div className="container mx-auto px-4 py-8 max-w-4xl">                                                                                                              
+       <div className="container mx-auto px-4 py-8 max-w-4xl">
+        
+        {/* Back to overview link */}
+        <div className="text-center mt-8">
+          <Link href="/apps/recipes" className="text-[#8B9D5A] hover:text-[#7A8B4B] font-semibold text-lg">
+            
+              Back to recipes
+            
+          </Link>
+        </div>                                                                                                              
          <Card className="w-full">                                                                                                                                          
            <CardHeader className="text-center">                                                                                                                             
              <CardTitle className="text-3xl md:text-4xl font-bold text-gray-800">                                                                                           

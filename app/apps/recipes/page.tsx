@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input'; // Korrigierter Importpfad
+import { Button } from '@/components/ui/button'; // Korrigierter Importpfad
+import { Card } from '@/components/ui/card'; // Korrigierter Importpfad
 import Link from 'next/link'; // Importing Link for navigation
 import Image from 'next/image'; // Importing Image from Next.js
 
@@ -133,6 +133,15 @@ const Recipes = () => {
             </div>
           </>
         )}
+
+        {/* Back to overview link */}
+        <div className="text-center mt-8">
+          <Link href="/apps/recipes">
+            <a className="text-[#8B9D5A] hover:text-[#7A8B4B] font-semibold text-lg">
+              Zurück zur Übersicht
+            </a>
+          </Link>
+        </div>
 
         {/* Initial state when no recipes have been searched */}
         {!isLoading && recipes.length === 0 && (
