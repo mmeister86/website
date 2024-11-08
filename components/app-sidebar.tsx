@@ -1,4 +1,4 @@
-import { Home, Mail, Github, ChevronRight, Gamepad2} from "lucide-react"
+import { Home, Mail, Github, ChevronRight, Gamepad2, BookOpen, Film, Utensils } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -18,7 +18,15 @@ import {
   CollapsibleContent
 } from "@/components/ui/collapsible"
 
-const menuItems = {
+// Typdefinition für Menüelemente mit optionalem Icon für Submenu-Elemente
+interface MenuItem {
+  title: string;
+  url: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  items?: (MenuItem & { icon?: React.ComponentType<{ className?: string }> })[];
+}
+
+const menuItems: { navMain: MenuItem[] } = {
   navMain: [
     {
       title: "Home",
@@ -42,15 +50,18 @@ const menuItems = {
       items: [
         {
           title: "SMART Goals",
-          url: "/apps/smart-goals"
+          url: "/apps/smart-goals",
+          icon: BookOpen  
         },
         {
           title: "Movie recommendations",
-          url: "/apps/movie-recommendations"
+          url: "/apps/movie-recommendations",
+          icon: Film  
         },
         {
           title: "Recipes",
-          url: "/apps/recipes"
+          url: "/apps/recipes",
+          icon: Utensils  
         }
       ],
     },
@@ -87,6 +98,7 @@ export function AppSidebar({ variant = "inset" }: { variant?: "sidebar" | "float
                             <SidebarMenuSubItem key={subItem.title}>
                               <SidebarMenuSubButton asChild>
                                 <a href={subItem.url}>
+                                  {subItem.icon && <subItem.icon className="h-4 w-4 mr-2" />}
                                   <span>{subItem.title}</span>
                                 </a>
                               </SidebarMenuSubButton>
