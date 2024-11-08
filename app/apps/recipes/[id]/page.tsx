@@ -32,7 +32,12 @@ interface RecipeDetails {
 export async function generateMetadata({ params }: { params: { id: string } }) {
   try {
     const id = params.id;
-    const res = await fetch(`/api/recipes/${id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/recipes/${id}`, {
+      cache: 'no-store',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     const recipe: RecipeDetails = await res.json();
 
     if (!recipe) {
@@ -53,7 +58,12 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 // Function to load recipe data
 async function getRecipe(id: string): Promise<RecipeDetails> {
-  const res = await fetch(`/api/recipes/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/recipes/${id}`, {
+    cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
   
   if (!res.ok) {
     throw new Error('Error fetching the recipe');
