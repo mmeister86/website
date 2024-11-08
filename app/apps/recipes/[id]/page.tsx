@@ -31,7 +31,7 @@ interface RecipeDetails {
 // Function to load recipe metadata
 export async function generateMetadata({ params }: { params: { id: string } }) {
   try {
-    const id = params.id;
+    const { id } = params;
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/recipes/${id}`, {
       cache: 'no-store',
       headers: {
@@ -74,7 +74,8 @@ async function getRecipe(id: string): Promise<RecipeDetails> {
 
 export default async function RecipePage({ params }: { params: { id: string } }) {
   try {
-    const recipe = await getRecipe(params.id);
+    const { id } = params;
+    const recipe = await getRecipe(id);
 
     return (
       <div className="container mx-auto px-4 py-8 max-w-4xl">
