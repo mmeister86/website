@@ -29,9 +29,9 @@ interface RecipeDetails {
 }
 
 // Function to load recipe metadata
-export async function generateMetadata({ params }: { params: { id: Promise<string> } }) {
+export async function generateMetadata({ params }: { params: { id: string } }) {
   try {
-    const id = await params.id;
+    const id = params.id;
     const res = await fetch(
       `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`
     );
@@ -66,11 +66,9 @@ async function getRecipe(id: string): Promise<RecipeDetails> {
   return res.json();
 }
 
-export default async function RecipePage({ params }: { params: { id: Promise<string> } }) {
+export default async function RecipePage({ params }: { params: { id: string } }) {
   try {
-    // Await the id parameter before using it
-    const id = await params.id;
-    const recipe = await getRecipe(id);
+    const recipe = await getRecipe(params.id);
 
     return (
       <div className="container mx-auto px-4 py-8 max-w-4xl">
