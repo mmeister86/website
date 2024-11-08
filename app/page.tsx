@@ -5,11 +5,15 @@ import Image from "next/image";
 import { SidebarTrigger } from "@/components/ui/sidebar"; 
 import WordRotate from "@/components/ui/word-rotate"; 
 import DotPattern from "@/components/ui/dot-pattern"; 
+import { useToast } from "@/hooks/use-toast";
+ 
 
 export default function Home() {
 
+  const { toast } = useToast()
+
   return (
-    <main className="relative min-h-screen flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto">
+    <main className="relative min-h-screen flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto my-auto">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" /> {/* Dot-Pattern hinter dem Text */}
       <div className="flex flex-col gap-12 relative z-10">
         <Image 
@@ -18,6 +22,12 @@ export default function Home() {
           width={128}
           height={128}
           className="rounded-full cursor-pointer"
+          onClick={() => {
+            toast({
+              title: "Nope. No link here.",
+              description: "Sorry i made you click, i wanted to try out the toast functionality.",
+            })
+          }}
         />
         
         <div className="space-y-4">
@@ -43,7 +53,7 @@ export default function Home() {
 
           <div className="py-4 space-y-4 text-lg text-neutral-600 font-medium">
             <div className="flex items-center gap-2">
-              <p>Check out my little projects using the <ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /></p>
+              <p>Check out my little projects using the sidebar <ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /><ArrowRight className="inline-flex size-4" /></p>
               <SidebarTrigger className="inline-flex size-4 hover:bg-none"/>
             </div>
           </div>
@@ -54,6 +64,11 @@ export default function Home() {
               hi@matthias.lol
             </a>
           </div>
+
+          <div className="font-light text-gray-600 text-sm pt-4">
+            <p>&#169; Matthias Meister | Mayener Straße 15 | 56753 Welling | Germany)</p>
+          </div>
+
         </div>
       </div>
     </main>

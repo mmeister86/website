@@ -1,4 +1,4 @@
-import { Home, Mail, Github, ChevronRight, FolderGit2, Goal } from "lucide-react"
+import { Home, Mail, Github, ChevronRight, Gamepad2} from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -36,19 +36,17 @@ const menuItems = {
       url: "https://github.com/mmeister86r",
     },
     {
-      title: "Projects",
+      title: "Playground",
       url: "#",
-      icon: FolderGit2,
+      icon: Gamepad2,
       items: [
         {
           title: "SMART Goals",
-          url: "/apps/smart-goals",
-          icons: Goal
+          url: "/apps/smart-goals"
         },
         {
           title: "Movie recommendations",
-          url: "/apps/movie-recommendations",
-          icons: Goal
+          url: "/apps/movie-recommendations"
         }
       ],
     },
