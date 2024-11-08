@@ -32,9 +32,7 @@ interface RecipeDetails {
 export async function generateMetadata({ params }: { params: { id: string } }) {
   try {
     const id = params.id;
-    const res = await fetch(
-      `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`
-    );
+    const res = await fetch(`/api/recipes/${id}`);
     const recipe: RecipeDetails = await res.json();
 
     if (!recipe) {
@@ -55,9 +53,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 // Function to load recipe data
 async function getRecipe(id: string): Promise<RecipeDetails> {
-  const res = await fetch(
-    `https://api.spoonacular.com/recipes/${id}/information?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`
-  );
+  const res = await fetch(`/api/recipes/${id}`);
   
   if (!res.ok) {
     throw new Error('Error fetching the recipe');
