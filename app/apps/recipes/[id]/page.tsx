@@ -50,8 +50,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
     };
   } catch (error) {
     return {
-      title: 'Recipe not found',
-      description: 'The requested recipe could not be loaded.'
+      title: 'Rezept nicht gefunden',
+      description: 'Das angeforderte Rezept konnte nicht geladen werden.'
     };
   }
 }
@@ -104,15 +104,15 @@ export default async function RecipePage({ params }: { params: { id: string } })
 
             <div className="grid md:grid-cols-3 gap-4 mb-8 text-center">
               <div className="bg-gray-100 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-600">Servings</h3>
+                <h3 className="font-semibold text-gray-600">Portionen</h3>
                 <p className="text-xl font-bold">{recipe.servings}</p>
               </div>
               <div className="bg-gray-100 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-600">Preparation Time</h3>
-                <p className="text-xl font-bold">{recipe.readyInMinutes} minutes</p>
+                <h3 className="font-semibold text-gray-600">Zubereitungszeit</h3>
+                <p className="text-xl font-bold">{recipe.readyInMinutes} Minuten</p>
               </div>
               <div className="bg-gray-100 p-4 rounded-lg">
-                <h3 className="font-semibold text-gray-600">Calories</h3>
+                <h3 className="font-semibold text-gray-600">Kalorien</h3>
                 <p className="text-xl font-bold">
                   {recipe.nutrition?.nutrients.find(n => n.name === "Calories")?.amount ?? 'N/A'} kcal
                 </p>
@@ -120,7 +120,7 @@ export default async function RecipePage({ params }: { params: { id: string } })
             </div>
 
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Ingredients</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Zutaten</h2>
               <ul className="space-y-2 pl-5 list-disc">
                 {recipe.extendedIngredients.map((ingredient) => (
                   <li key={ingredient.id} className="text-gray-700">
@@ -131,7 +131,7 @@ export default async function RecipePage({ params }: { params: { id: string } })
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-gray-800 mb-4">Preparation</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-4">Zubereitung</h2>
               <ol className="space-y-4 pl-5 list-decimal">
                 {recipe.analyzedInstructions[0]?.steps.map((step) => (
                   <li key={step.number} className="text-gray-700">
@@ -149,8 +149,8 @@ export default async function RecipePage({ params }: { params: { id: string } })
       <div className="container mx-auto px-4 py-8 max-w-4xl text-center">
         <Card>
           <CardContent className="p-8">
-            <h1 className="text-3xl font-bold text-red-600 mb-4">Recipe not found</h1>
-            <p className="text-gray-700">Sorry, but the requested recipe could not be loaded.</p>
+            <h1 className="text-3xl font-bold text-red-600 mb-4">Rezept nicht gefunden</h1>
+            <p className="text-gray-700">Entschuldigung, das angeforderte Rezept konnte nicht geladen werden.</p>
           </CardContent>
         </Card>
       </div>
