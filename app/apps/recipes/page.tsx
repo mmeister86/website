@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Link from 'next/link'; // Importing Link for navigation
+import Image from 'next/image'; // Importing Image from Next.js
 
 // Types for recipe data
 interface Recipe {
@@ -100,9 +101,11 @@ const Recipes = () => {
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     {/* Recipe image */}
                     <div className="relative h-48 w-full">
-                      <img
+                      <Image
                         src={recipe.image}
                         alt={recipe.title}
+                        layout="fill"
+                        objectFit="cover"
                         className="object-cover w-full h-full"
                       />
                     </div>
