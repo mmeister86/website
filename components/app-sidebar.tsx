@@ -1,4 +1,4 @@
-import { Home, Mail, Github, ChevronRight, Gamepad2, BookOpen, Film, Utensils } from "lucide-react"
+import { Home, Mail, Github, ChevronRight, Gamepad2, BookOpen, Film, Utensils, Book } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -34,14 +34,19 @@ const menuItems: { navMain: MenuItem[] } = {
       url: "/",
     },
     {
-      title: "Contact",
-      icon: Mail,
-      url: "mailto:hi@matthias.lol",
+      title: "Notes",
+      icon: Book,
+      url: "/notes",
     },
     {
       title: "GitHub",
       icon: Github,
       url: "https://github.com/mmeister86r",
+    },
+    {
+      title: "Contact",
+      icon: Mail,
+      url: "mailto:hi@matthias.lol",
     },
     {
       title: "Playground",
