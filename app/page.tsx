@@ -48,7 +48,7 @@ export default function Home() {
               writing <CodeSquare className="ml-1 inline-flex size-4 text-[#ff9f43]"/> <a href="https://github.com/mmeister86" className="underline hover:text-black transition-colors">code</a> which
               i store on GitHub.
             </p>
-            <p>All of this wouldn&apos;t be possible withhout incredible (often times) open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
+            <p>All of this wouldn&apos;t be possible without incredible (often times) open source tools like Aider, Cline, VS-Code, shadcn UI, Vercel, and many more.</p>
           </div>
 
           <div className="py-4 space-y-4 text-lg text-neutral-600 font-medium">
@@ -66,7 +66,7 @@ export default function Home() {
           </div>
 
           <div className="font-light text-gray-600 text-sm pt-4">
-            <p>&#169; Matthias Meister | Mayener Straße 15 | 56753 Welling | Germany)</p>
+            <p>&#169; Matthias Meister | Mayener Straße 15 | 56753 Welling | Germany<br/>Made with NextJS and deployed to Vercel.</p>
           </div>
 
         </div>
