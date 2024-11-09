@@ -78,7 +78,7 @@ export function AppSidebar({ variant = "inset" }: { variant?: "sidebar" | "float
     <Sidebar 
       collapsible="offcanvas" 
       variant={variant}
-      className="z-50 h-full"
+      className="z-50 h-full overflow-y-auto"
       title={undefined}
     >
       <SidebarContent className="h-full">
