@@ -13,7 +13,7 @@ export default function Home() {
   const { toast } = useToast()
 
   return (
-    <main className="relative flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto my-auto">
+    <main className="relative flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto my-auto overflow-hidden">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" /> {/* Dot-Pattern hinter dem Text */}
       <div className="flex flex-col gap-12 relative z-10">
         <Image 
