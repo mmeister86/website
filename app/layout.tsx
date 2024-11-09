@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { ArrowLeft } from "lucide-react";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/toaster"
 
 const hkGrotesk = localFont({
   src: [
@@ -46,10 +45,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${hkGrotesk.variable} antialiased flex overflow-auto`}>
+      {/* Hauptcontainer mit overflow-hidden, Untercontainer mit overflow-y-auto */}
+      <body className={`${hkGrotesk.variable} antialiased flex h-screen overflow-hidden`}>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar variant="inset" />
-          <SidebarInset>
+          <SidebarInset className="flex-1 overflow-y-auto">
             <SidebarTrigger className="absolute top-4 left-4 z-50" />
             {children}
           </SidebarInset>
