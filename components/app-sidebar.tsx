@@ -51,17 +51,17 @@ const menuItems: { navMain: MenuItem[] } = {
         {
           title: "SMART Goals",
           url: "/apps/smart-goals",
-          icon: BookOpen  
+          icon: BookOpen
         },
         {
           title: "Movie recommendations",
           url: "/apps/movie-recommendations",
-          icon: Film  
+          icon: Film
         },
         {
           title: "Recipes",
           url: "/apps/recipes",
-          icon: Utensils  
+          icon: Utensils
         }
       ],
     },
@@ -73,13 +73,13 @@ export function AppSidebar({ variant = "inset" }: { variant?: "sidebar" | "float
     <Sidebar 
       collapsible="offcanvas" 
       variant={variant}
-      className="z-50"
+      className="z-50 h-full"
       title={undefined}
     >
-      <SidebarContent>
-        <SidebarGroup>
+      <SidebarContent className="h-full">
+        <SidebarGroup className="h-full">
           <SidebarGroupLabel><h2 className="font-bold text-xl py-6">Navigation</h2></SidebarGroupLabel>
-          <SidebarGroupContent>
+          <SidebarGroupContent className="h-full">
             <SidebarMenu className="pt-10">
               {menuItems.navMain.map((item) => (
                 <SidebarMenuItem key={item.title}>

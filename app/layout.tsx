@@ -46,11 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Hauptcontainer mit overflow-hidden, Untercontainer mit overflow-y-auto */}
-      <body className={`${hkGrotesk.variable} antialiased flex h-screen overflow-hidden`}>
+      <body className={`${hkGrotesk.variable} antialiased flex h-[100dvh]`}>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar variant="inset" />
-          <SidebarInset className="flex-1 overflow-y-auto">
-            <SidebarTrigger className="absolute top-4 left-4 z-50" />
+          <SidebarInset className="flex-1 relative overflow-y-auto">
+            <SidebarTrigger className="relative top-4 left-4 z-50" />
             {children}
           </SidebarInset>
         </SidebarProvider>
@@ -61,3 +61,4 @@ export default function RootLayout({
     </html>
   );
 }
+
