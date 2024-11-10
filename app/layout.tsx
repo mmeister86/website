@@ -54,28 +54,34 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
         <SidebarProvider defaultOpen={false}>
-          <header className="flex items-center p-4">
-            <SidebarTrigger className="mr-4" />
-            {pathname !== "/" && (
-              <Breadcrumb>
-                <BreadcrumbList>
-                  <BreadcrumbItem>
-                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator />
-                  <BreadcrumbPage>{pathname.split('/').pop()}</BreadcrumbPage>
-                </BreadcrumbList>
-              </Breadcrumb>
-            )}
-          </header>
-          <AppSidebar />
-          <div className="flex mx-auto">
-            {children}
+          <div className="flex flex-col h-full">
+            <header className="w-full p-4">
+              <div className="flex items-center">
+                <SidebarTrigger className="mr-4" />
+                {pathname !== "/" && (
+                  <Breadcrumb>
+                    <BreadcrumbList>
+                      <BreadcrumbItem>
+                        <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                      </BreadcrumbItem>
+                      <BreadcrumbSeparator />
+                      <BreadcrumbPage>{pathname.split('/').pop()}</BreadcrumbPage>
+                    </BreadcrumbList>
+                  </Breadcrumb>
+                )}
+              </div>
+            </header>
+            <div className="flex flex-1 overflow-hidden">
+              <AppSidebar />
+              <main className="flex-1 overflow-auto">
+                {children}
+              </main>
+            </div>
           </div>
+          <Toaster />
+          <Analytics />
+          <SpeedInsights />
         </SidebarProvider>
-        <Toaster />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
