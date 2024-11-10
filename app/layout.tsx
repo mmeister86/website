@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -43,11 +42,6 @@ const hkGrotesk = localFont({
   ],
   variable: "--font-hk-grotesk",
 });
-
-export const metadata: Metadata = {
-  title: "matthias.lol",
-  description: "Portfolio | sort of a Webdeveloper",
-};
 
 export default function RootLayout({
   children,
