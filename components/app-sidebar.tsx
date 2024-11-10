@@ -50,7 +50,7 @@ const menuItems: { navMain: MenuItem[] } = {
     {
       title: "GitHub",
       icon: Github,
-      url: "https://github.com/mmeister86r",
+      url: "https://github.com/mmeister86",
     },
     {
       title: "Contact",

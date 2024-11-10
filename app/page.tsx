@@ -18,10 +18,10 @@ export default function Home() {
 
   return (
     <main className=" flex items-center justify-center md:p-24 w-full mx-auto my-auto">
-      <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />{" "}
-      {/* Dot-Pattern hinter dem Text */}
-      <div className="flex flex-col relative w-fit">
-        <div className="flex space-x-4">
+      <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
+    
+      <div className="flex flex-col relative w-fit gap-12">
+        <div className="flex item-center gap-4">
           <Image
             src="/matthias.jpg"
             alt="Portrait"
@@ -41,7 +41,7 @@ export default function Home() {
             alt="Click Me"
             width={150}
             height={115}
-            className="my-auto"
+            className="my-auto md:block lg:block hidden"
           />
         </div>
 
@@ -74,6 +74,7 @@ export default function Home() {
               <a
                 href="https://x.com/matthias_codes"
                 className="underline hover:text-black transition-colors"
+                target="blank"
               >
                 tweeting
               </a>
@@ -82,6 +83,7 @@ export default function Home() {
               <a
                 href="https://instagram.com/dermeisterfotograf"
                 className="underline hover:text-black transition-colors"
+                target="blank"
               >
                 photos
               </a>{" "}
@@ -90,6 +92,7 @@ export default function Home() {
               <a
                 href="https://github.com/mmeister86"
                 className="underline hover:text-black transition-colors"
+                target="blank"
               >
                 code
               </a>{" "}
