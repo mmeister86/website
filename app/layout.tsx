@@ -2,35 +2,39 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
-import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar"
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Toaster } from "@/components/ui/toaster"
+import {
+  SidebarProvider,
+  SidebarInset,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Toaster } from "@/components/ui/toaster";
 
 const hkGrotesk = localFont({
   src: [
     {
-      path: '../public/fonts/hkgrotesk-regular-webfont.woff2',
-      weight: '400',
-      style: 'normal',
+      path: "../public/fonts/hkgrotesk-regular-webfont.woff2",
+      weight: "400",
+      style: "normal",
     },
     {
-      path: '../public/fonts/hkgrotesk-medium-webfont.woff2',
-      weight: '500',
-      style: 'normal',
+      path: "../public/fonts/hkgrotesk-medium-webfont.woff2",
+      weight: "500",
+      style: "normal",
     },
     {
-      path: '../public/fonts/hkgrotesk-semibold-webfont.woff2',
-      weight: '600',
-      style: 'normal',
+      path: "../public/fonts/hkgrotesk-semibold-webfont.woff2",
+      weight: "600",
+      style: "normal",
     },
     {
-      path: '../public/fonts/hkgrotesk-bold-webfont.woff2',
-      weight: '700',
-      style: 'normal',
-    }
+      path: "../public/fonts/hkgrotesk-bold-webfont.woff2",
+      weight: "700",
+      style: "normal",
+    },
   ],
-  variable: '--font-hk-grotesk',
+  variable: "--font-hk-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -44,20 +48,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-screen">
-      <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
+    <html lang="en">
+      <body
+        className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}
+      >
         <SidebarProvider defaultOpen={false}>
-          <div className="flex h-full w-full">
-            <AppSidebar variant="inset" />
-            <SidebarInset className="flex flex-col min-h-full w-full mx-auto">
-              <header className="flex h-16 shrink-0 items-center px-4">
-                <SidebarTrigger />
-              </header>
-              <div className="flex-0 overflow-clip my-auto mx-auto shrink-0">
-                {children}
-              </div>
-            </SidebarInset>
-          </div>
+            <AppSidebar />
+            <SidebarTrigger className="relative top-4 left-4" />
+            <div className="flex mx-auto">
+              {children}
+            </div>
         </SidebarProvider>
         <Toaster />
         <Analytics />

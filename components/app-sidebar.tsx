@@ -82,13 +82,9 @@ const menuItems: { navMain: MenuItem[] } = {
   ],
 };
 
-export function AppSidebar({
-  variant = "inset",
-}: {
-  variant?: "sidebar" | "floating" | "inset";
-}) {
+export function AppSidebar(){
   return (
-    <Sidebar collapsible="offcanvas" variant={variant} className="h-screen">
+    <Sidebar collapsible="offcanvas" variant="floating" className="h-screen">
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>A little navigation</SidebarGroupLabel>
