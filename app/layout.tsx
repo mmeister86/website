@@ -14,6 +14,7 @@ import {
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/toaster";
+import { usePathname } from "next/navigation";
 
 const hkGrotesk = localFont({
   src: [
@@ -51,12 +52,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+
   return (
     <html lang="en">
       <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
         <SidebarProvider defaultOpen={false}>
+          <header className="flex items-center p-4">
+            <SidebarTrigger className="mr-4" />
+            {pathname !== "/" && (
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbPage>{pathname.split('/').pop()}</BreadcrumbPage>
+                </BreadcrumbList>
+              </Breadcrumb>
+            )}
+          </header>
           <AppSidebar />
-          <SidebarTrigger className="relative top-4 left-4" />
           <div className="flex mx-auto">
             {children}
           </div>
