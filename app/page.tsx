@@ -17,7 +17,7 @@ export default function Home() {
   const { toast } = useToast();
 
   return (
-    <main className=" flex items-center justify-center md:p-24 sm:py-12 w-full mx-auto my-auto">
+    <main className=" flex items-center justify-center md:p-24 sm:my-14 w-full mx-auto my-auto">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
     
       <div className="flex flex-col relative w-fit gap-12">
@@ -53,8 +53,7 @@ export default function Home() {
               duration={4000}
               words={["tiny", "cool", "funny", "cute", "useful", "sexy"]}
               className="bg-[#ff9f43] p-2 rounded-2xl"
-            />{" "}
-            apps for the web.
+            />{" "}<br className="md:hidden" /> apps for the web.
           </h1>
 
           <div className="space-y-4 text-lg text-neutral-600 font-medium">
