@@ -110,7 +110,7 @@ export default function Home() {
                 <ArrowRight className="inline-flex size-4" />
                 <ArrowRight className="inline-flex size-4" />
               </p>
-              <SidebarTrigger className="inline-flex size-4 hover:bg-none" />
+              <SidebarTrigger className="inline-flex size-4 hover:bg-none sm:ml-0 sm:mr-auto" />
             </div>
           </div>
 
