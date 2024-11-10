@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import {
-  SidebarProvider,
-  SidebarInset,
-  SidebarTrigger,
-} from "@/components/ui/sidebar";
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/toaster";
@@ -49,15 +53,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}
-      >
+      <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
         <SidebarProvider defaultOpen={false}>
-            <AppSidebar />
-            <SidebarTrigger className="relative top-4 left-4" />
-            <div className="flex mx-auto">
-              {children}
-            </div>
+          <AppSidebar />
+          <SidebarTrigger className="relative top-4 left-4" />
+          <div className="flex mx-auto">
+            {children}
+          </div>
         </SidebarProvider>
         <Toaster />
         <Analytics />
