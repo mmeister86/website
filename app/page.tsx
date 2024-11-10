@@ -17,7 +17,7 @@ export default function Home() {
   const { toast } = useToast();
 
   return (
-    <main className=" flex items-center justify-center md:p-24 w-full mx-auto my-auto">
+    <main className=" flex items-center justify-center md:p-24 sm:py-12 w-full mx-auto my-auto">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
     
       <div className="flex flex-col relative w-fit gap-12">
@@ -27,7 +27,7 @@ export default function Home() {
             alt="Portrait"
             width={128}
             height={128}
-            className="rounded-full cursor-pointer mb-12"
+            className="rounded-full cursor-pointer"
             onClick={() => {
               toast({
                 title: "Nope. No link here.",
@@ -54,16 +54,14 @@ export default function Home() {
               words={["tiny", "cool", "funny", "cute", "useful", "sexy"]}
               className="bg-[#ff9f43] p-2 rounded-2xl"
             />{" "}
-            apps <br />
-            for the web.
+            apps for the web.
           </h1>
 
           <div className="space-y-4 text-lg text-neutral-600 font-medium">
             <p>
-              Building simple and beautiful things with accessible tools is what
-              I enjoy most about my work.
-              <br />I am also interested in crafting beautiful minimal products
-              and exploring new worlds.
+              Building simple and beautiful little apps with free to use tools is what
+              I enjoy most about writing software.
+              <br />I am using this website as a playground to dive nose first in the world of NextJS, trying to have some fun along the way.
             </p>
             <p>
               Sometimes i&apos;m
