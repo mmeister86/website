@@ -73,8 +73,10 @@ export default function RootLayout({
             </header>
             <div className="flex flex-1 overflow-hidden">
               <AppSidebar />
-              <main className="flex-1 overflow-auto">
-                {children}
+              <main className="flex-1 overflow-auto flex justify-center items-center p-4">
+                <div className="max-w-4xl w-full">
+                  {children}
+                </div>
               </main>
             </div>
           </div>
