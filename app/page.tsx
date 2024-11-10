@@ -17,7 +17,7 @@ export default function Home() {
   const { toast } = useToast();
 
   return (
-    <main className=" flex items-center justify-center md:p-24 sm:my-14 w-full mx-auto my-auto">
+    <main className=" flex items-center justify-center md:p-24 sm:my-14 w-full mx-auto my-auto py-8 sm:py-16">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
     
       <div className="flex flex-col relative w-fit gap-12">
@@ -27,7 +27,7 @@ export default function Home() {
             alt="Portrait"
             width={128}
             height={128}
-            className="rounded-full cursor-pointer"
+            className="rounded-full cursor-pointer mx-auto sm:mx-0"
             onClick={() => {
               toast({
                 title: "Nope. No link here.",
@@ -109,8 +109,9 @@ export default function Home() {
                 <ArrowRight className="inline-flex size-4" />
                 <ArrowRight className="inline-flex size-4" />
                 <ArrowRight className="inline-flex size-4" />
+              {" "}
+              <SidebarTrigger className="inline-flex m-auto size-4 hover:bg-none sm:inline-block sm:mr-auto" />
               </p>
-              <SidebarTrigger className="inline-flex size-4 hover:bg-none sm:ml-0 sm:mr-auto" />
             </div>
           </div>
 
