@@ -13,31 +13,22 @@ export default function Home() {
   const { toast } = useToast()
 
   return (
-    <main className="relative flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto my-auto overflow-hidden">
+    <main className="relative min-h-screen flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto my-auto">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" /> {/* Dot-Pattern hinter dem Text */}
       <div className="flex flex-col gap-12 relative z-10">
-        <div className="flex items-center gap-4">
-          <Image 
-            src="/matthias.jpg"
-            alt="Portrait"
-            width={128}
-            height={128}
-            className="rounded-full cursor-pointer"
-            onClick={() => {
-              toast({
-                title: "Nope. No link here.",
-                description: "Sorry i made you click, i wanted to try out the toast functionality.",
-              })
-            }}
-          />
-          <Image 
-            src="/click-me.png"
-            alt="Click me"
-            width={100}
-            height={100}
-            className="animate-bounce"
-          />
-        </div>
+        <Image 
+          src="/matthias.jpg"
+          alt="Portrait"
+          width={128}
+          height={128}
+          className="rounded-full cursor-pointer"
+          onClick={() => {
+            toast({
+              title: "Nope. No link here.",
+              description: "Sorry i made you click, i wanted to try out the toast functionality.",
+            })
+          }}
+        />
         
         <div className="space-y-4">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">

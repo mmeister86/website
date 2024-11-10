@@ -44,15 +44,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* Hauptcontainer mit overflow-hidden, Untercontainer mit overflow-y-auto */}
-      <body className={`${hkGrotesk.variable} antialiased flex overflow-hidden`}>
+    <html lang="en" className="h-screen">
+      <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
         <SidebarProvider defaultOpen={false}>
-          <AppSidebar variant="inset" />
-          <SidebarInset className="flex-1 relative overflow-y-auto">
-            <SidebarTrigger className="relative top-4 left-4 z-50" />
-            {children}
-          </SidebarInset>
+          <div className="flex h-full w-full">
+            <AppSidebar variant="inset" />
+            <SidebarInset className="flex flex-col min-h-full w-full mx-auto">
+              <header className="flex h-16 shrink-0 items-center px-4">
+                <SidebarTrigger />
+              </header>
+              <div className="flex-0 overflow-clip my-auto mx-auto shrink-0">
+                {children}
+              </div>
+            </SidebarInset>
+          </div>
         </SidebarProvider>
         <Toaster />
         <Analytics />
@@ -61,4 +66,3 @@ export default function RootLayout({
     </html>
   );
 }
-
