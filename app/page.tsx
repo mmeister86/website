@@ -13,15 +13,15 @@ export default function Home() {
   const { toast } = useToast()
 
   return (
-    <main className="relative min-h-screen flex items-center justify-center p-8 md:p-24 max-w-5xl mx-auto my-auto">
+    <main className=" flex items-center justify-center md:p-24 w-full mx-auto my-auto">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" /> {/* Dot-Pattern hinter dem Text */}
-      <div className="flex flex-col gap-12 relative z-10">
+      <div className="flex flex-col relative w-fit">
         <Image 
           src="/matthias.jpg"
           alt="Portrait"
           width={128}
           height={128}
-          className="rounded-full cursor-pointer"
+          className="rounded-full cursor-pointer mb-12"
           onClick={() => {
             toast({
               title: "Nope. No link here.",
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="space-y-4">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">
             Hi, i&apos;m Matthias.<br />
-            I build <WordRotate duration={3500} words={["tiny", "cool", "funny", "cute", "useful", "sexy"]} className="bg-[#ff9f43] p-2 rounded-2xl"/> apps <br/>for the web.
+            I build <WordRotate duration={4000} words={["tiny", "cool", "funny", "cute", "useful", "sexy"]} className="bg-[#ff9f43] p-2 rounded-2xl"/> apps <br/>for the web.
           </h1>
           
           <div className="space-y-4 text-lg text-neutral-600 font-medium">
