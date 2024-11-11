@@ -17,10 +17,10 @@ export default function Home() {
   const { toast } = useToast();
 
   return (
-    <main className=" flex items-center justify-center md:p-24 sm:my-14 w-full mx-auto my-auto py-8 sm:py-16">
+    <main className=" flex items-center justify-center sm:my-14 w-full mx-auto my-auto py-8 sm:py-16">
       <DotPattern className="absolute inset-0 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]" />
-    
-      <div className="flex flex-col relative w-fit gap-12">
+
+      <div className="flex flex-col relative w-fit sm:gap-12">
         <div className="flex item-center gap-4">
           <Image
             src="/matthias.jpg"
