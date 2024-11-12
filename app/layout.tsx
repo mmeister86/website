@@ -1,4 +1,3 @@
-
 import localFont from "next/font/local";
 import "./globals.css";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -59,7 +58,7 @@ export default function RootLayout({
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
           <SidebarTrigger className="relative top-4 left-4" />
-          
+
           <div className="flex mx-auto">
             {children}
           </div>
