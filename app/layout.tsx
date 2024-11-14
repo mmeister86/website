@@ -59,7 +59,7 @@ export default function RootLayout({
           <AppSidebar />
           <SidebarTrigger className="relative top-4 left-4" />
 
-          <div className="flex mx-auto">
+          <div className="flex-1 w-full">
             {children}
           </div>
         </SidebarProvider>

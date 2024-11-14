@@ -57,7 +57,7 @@ const Recipes = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen w-full">
       {/* Hero Section with improved styling */}
       <div className="max-w-6xl mx-auto px-4 py-16">
         <h1 className="text-5xl font-bold mb-3 text-center">
@@ -78,7 +78,7 @@ const Recipes = () => {
               className="flex-1"
               onKeyPress={(e) => e.key === 'Enter' && searchRecipes()}
             />
-            <Button 
+            <Button
               className="bg-[#8B9D5A] hover:bg-[#7A8B4B] px-8"
               onClick={searchRecipes}
               disabled={isLoading}
@@ -134,7 +134,7 @@ const Recipes = () => {
           </>
         )}
 
-        {/* Back to overview link 
+        {/* Back to overview link
         <div className="text-center mt-8">
           <Link href="/apps/recipes">
             <a className="text-[#8B9D5A] hover:text-[#7A8B4B] font-semibold text-lg">
