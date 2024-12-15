@@ -10,11 +10,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/toaster";
 import { usePathname } from "next/navigation";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "matthias.lol",
@@ -54,18 +53,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script
+        defer
+        src="https://umami-dkgocgok8og0oo0s80o8occo.matthias.lol/script.js"
+        data-website-id="1f1bee24-f4d9-4072-8083-c31cdc721e2a"
+      ></script>
       <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
           <SidebarTrigger className="relative top-4 left-4" />
 
-          <div className="flex-1 w-full">
-            {children}
-          </div>
+          <div className="flex-1 w-full">{children}</div>
         </SidebarProvider>
         <Toaster />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
