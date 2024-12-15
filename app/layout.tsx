@@ -55,8 +55,8 @@ export default function RootLayout({
     <html lang="en">
       <script
         defer
-        src="https://umami-dkgocgok8og0oo0s80o8occo.matthias.lol/script.js"
-        data-website-id="1f1bee24-f4d9-4072-8083-c31cdc721e2a"
+        src="https://umami.matthias.lol/script.js"
+        data-website-id="d0ba6033-81c8-414d-ae23-04ff627b7c8f"
       ></script>
       <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
         <SidebarProvider defaultOpen={false}>
