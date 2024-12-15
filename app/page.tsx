@@ -136,7 +136,7 @@ export default function Home() {
               &#169; Matthias Meister | Mayener Straße 15 | 56753 Welling |
               Germany
               <br />
-              Made with NextJS and deployed to <s>Vercel</s> to my own server.
+              Made with NextJS and deployed to <s>Vercel</s> my own server.
             </p>
           </div>
         </div>
