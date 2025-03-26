@@ -12,6 +12,7 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 import WordRotate from "@/components/ui/word-rotate";
 import DotPattern from "@/components/ui/dot-pattern";
 import { useToast } from "@/hooks/use-toast";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const { toast } = useToast();
@@ -49,18 +50,23 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold leading-tight transition-transform ease-in-out">
             Hi, i&apos;m Matthias.
             <br />I build{" "}
-            <WordRotate
-              duration={4000}
-              words={["tiny", "cool", "funny", "cute", "useful", "sexy"]}
-              className="bg-[#ff9f43] p-2 rounded-2xl"
-            />{" "}<br className="md:hidden" /> apps for the web.
+            <span className="inline-block items-center mt-2">
+              <WordRotate
+                duration={4000}
+                words={["tiny", "cool", "funny", "cute", "useful", "sexy"]}
+                className="bg-[#ff9f43] p-2 rounded-2xl"
+                useFramerMotion={true}
+              />
+            </span>{" "}
+            <br className="md:hidden" /> apps for the web.
           </h1>
 
           <div className="space-y-4 text-lg text-neutral-600 font-medium">
             <p>
-              Building simple and beautiful little apps with free to use tools is what
-              I enjoy most about writing software.
-              <br />I am using this website as a playground to dive nose first in the world of NextJS, trying to have some fun along the way.
+              Building simple and beautiful little apps with free to use tools
+              is what I enjoy most about writing software.
+              <br />I am using this website as a playground to dive nose first
+              in the world of NextJS, trying to have some fun along the way.
             </p>
             <p>
               Sometimes i&apos;m
@@ -108,9 +114,8 @@ export default function Home() {
                 Check out my little projects using the sidebar{" "}
                 <ArrowRight className="inline-flex size-4" />
                 <ArrowRight className="inline-flex size-4" />
-                <ArrowRight className="inline-flex size-4" />
-              {" "}
-              <SidebarTrigger className="inline-flex m-auto size-4 hover:bg-none sm:inline-block sm:mr-auto" />
+                <ArrowRight className="inline-flex size-4" />{" "}
+                <SidebarTrigger className="inline-flex m-auto size-4 hover:bg-none sm:inline-block sm:mr-auto" />
               </p>
             </div>
           </div>

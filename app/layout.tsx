@@ -53,12 +53,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script
-        defer
-        src="https://umami.matthias.lol/script.js"
-        data-website-id="d0ba6033-81c8-414d-ae23-04ff627b7c8f"
-      ></script>
       <body className={`${hkGrotesk.variable} antialiased h-screen mx-auto`}>
+        <script
+          defer
+          src="https://umami.matthias.lol/script.js"
+          data-website-id="d0ba6033-81c8-414d-ae23-04ff627b7c8f"
+        ></script>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
           <SidebarTrigger className="relative top-4 left-4" />
