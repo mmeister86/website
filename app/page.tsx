@@ -138,10 +138,10 @@ export default function Home() {
 
           <div className="font-light text-gray-600 text-sm pt-4">
             <p>
-              &#169; Matthias Meister | Mayener Straße 15 | 56753 Welling |
+              &#169; Matthias Meister | Karl-Marx-Straße 22 | 08451 Crimmitschau |
               Germany
               <br />
-              Made with NextJS and deployed to <s>Vercel</s> my own server.
+              Made with NextJS (which is kinda overkill here tbh) and deployed to <s>Vercel</s> my own server.
             </p>
           </div>
         </div>
