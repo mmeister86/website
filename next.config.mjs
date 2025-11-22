@@ -2,17 +2,34 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const nextConfig = {
+  // Image configuration - remote patterns for TMDB and Spoonacular
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+        pathname: '/t/p/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.spoonacular.com',
+        pathname: '/recipes/**',
+      },
+    ],
+  },
+
+  // Webpack configuration for EditorJS and CSS extraction
   webpack: (config, { isServer }) => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
 
-    // Unterstützung für Editor.js-Module
+    // Support for Editor.js modules
     config.module.rules.push({
       test: /\.(js|mjs)$/,
       include: /node_modules\/@editorjs/,
       type: "javascript/auto",
     });
 
-    // Hinzufügen des MiniCssExtractPlugin für CSS-Dateien
+    // Add MiniCssExtractPlugin for CSS files (client-side only)
     if (!isServer) {
       config.plugins.push(
         new MiniCssExtractPlugin({
@@ -24,7 +41,8 @@ const nextConfig = {
 
     return config;
   },
-  // Zusätzliche Konfigurationen für Editor.js
+
+  // Transpile EditorJS packages for compatibility
   transpilePackages: [
     "@editorjs/editorjs",
     "@editorjs/header",
