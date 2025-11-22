@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-
 const nextConfig = {
   // Image configuration - remote patterns for TMDB and Spoonacular
   images: {
@@ -18,8 +16,8 @@ const nextConfig = {
     ],
   },
 
-  // Webpack configuration for EditorJS and CSS extraction
-  webpack: (config, { isServer }) => {
+  // Webpack configuration for EditorJS
+  webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
 
     // Support for Editor.js modules
@@ -28,16 +26,6 @@ const nextConfig = {
       include: /node_modules\/@editorjs/,
       type: "javascript/auto",
     });
-
-    // Add MiniCssExtractPlugin for CSS files (client-side only)
-    if (!isServer) {
-      config.plugins.push(
-        new MiniCssExtractPlugin({
-          filename: "static/css/[name].[contenthash].css",
-          chunkFilename: "static/css/[id].[contenthash].css",
-        })
-      );
-    }
 
     return config;
   },
