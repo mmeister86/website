@@ -11,7 +11,6 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Toaster } from "@/components/ui/toaster";
-import { usePathname } from "next/navigation";
 import type { Metadata } from "next";
 import Script from "next/script";
 
