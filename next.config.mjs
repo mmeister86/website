@@ -16,7 +16,10 @@ const nextConfig = {
     ],
   },
 
-  // Webpack configuration for EditorJS
+  // Turbopack configuration (Next.js 16 default)
+  turbopack: {},
+
+  // Webpack configuration for EditorJS (fallback for webpack builds)
   webpack: (config) => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
 
