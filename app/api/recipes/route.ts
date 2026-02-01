@@ -15,7 +15,7 @@ export async function GET(request: Request) {
 
     // Spoonacular API aufrufen
     const response = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}&query=${encodeURIComponent(query)}&addRecipeInformation=true&number=6&instructionsRequired=true&fillIngredients=true`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONACULAR_API_KEY}&query=${encodeURIComponent(query)}&addRecipeInformation=true&number=6&instructionsRequired=true&fillIngredients=true`
     );
 
     if (!response.ok) {

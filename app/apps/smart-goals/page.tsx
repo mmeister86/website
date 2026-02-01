@@ -23,29 +23,17 @@ const SmartGoals = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const apiKey = process.env.NEXT_PUBLIC_MISTRAL_API_KEY;
-    if (!apiKey) {
-      console.error('API key not found in .env');
-      return;
-    }
 
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
+      const response = await fetch('/api/smart-goals', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: 'mistral-large-2407',
-          messages: [
-            {
-              role: 'user',
-              content: `Help me break down this goal into SMART criteria: ${goal}`
-            }
-          ]
+          goal: goal
         })
       });
 
@@ -54,9 +42,8 @@ const SmartGoals = () => {
         throw new Error(`API request failed: ${errorBody}`);
       }
 
-      const data = await response.json();
-      const smartGoalResponse = data.choices[0].message.content;
-      setSmartGoals(smartGoalResponse.split('\n').filter((goal: string) => goal.trim() !== ''));
+      const smartGoals = await response.json();
+      setSmartGoals(smartGoals);
 
       showToast(
         "Success",
